@@ -1,10 +1,11 @@
 """
 Simple code for polynomial multiplication.
 The code assumes the two inputs have the same order, does not consider edge cases
-and and doesn’t perform any check on the inputs.
+and does not perform any check on the inputs.
 """
 
 import numpy as np
+
 
 def polynomial_multiply(A, B):
     # Schoolbook multiplication of two polynomials A and B
@@ -15,6 +16,7 @@ def polynomial_multiply(A, B):
         for j in range(n + 1):
             result[i + j] += A[i] * B[j]
     return result
+
 
 def polynomial_multiply_fft(A, B):
     # Multiplication of two polynomials A and B using FFT
@@ -33,6 +35,7 @@ def polynomial_multiply_fft(A, B):
     result = np.fft.ifft(result_fft).real.round()
     result = result[:n]
     return result
+
 
 def polynomial_multiply_ntt(A, B):
     # Multiplication of two polynomials A and B using NTT
@@ -88,9 +91,7 @@ def polynomial_multiply_ntt(A, B):
     return C
 
 
-
-
-def task_main():
+def test_one():
     # Example usage
     A = [1, 2, 3]  # Coefficients of A(x) = xˆ2 + 2x + 3
     B = [2, -1, 0]  # Coefficients of B(x) = 2x - xˆ0
@@ -99,5 +100,10 @@ def task_main():
     print('Result of Multiplication using NTT:', polynomial_multiply_ntt(A, B))
 
 
+# Result of Schoolbook Multiplication: [2, 3, 4, -3, 0]
+# Result of Multiplication using FFT: [ 2.  3.  4. -3.  0.]
+# Result of Multiplication using NTT: [2, 3, 4, -3]
+
+
 if __name__ == '__main__':
-    task_main()
+    test_one()
