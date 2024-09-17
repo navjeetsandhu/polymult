@@ -87,9 +87,17 @@ def polynomial_multiply_ntt(A, B):
             C[i] -= p
     return C
 
-# Example usage
-A = [1, 2, 3] # Coefficients of A(x) = xˆ2 + 2x + 3
-B = [2, -1, 0] # Coefficients of B(x) = 2x - xˆ0
-print('Result of Schoolbook Multiplication:', polynomial_multiply(A, B))
-print('Result of Multiplication using FFT:', polynomial_multiply_fft(A, B))
-print('Result of Multiplication using NTT:', polynomial_multiply_ntt(A, B))
+
+
+
+def task_main():
+    # Example usage
+    A = [1, 2, 3]  # Coefficients of A(x) = xˆ2 + 2x + 3
+    B = [2, -1, 0]  # Coefficients of B(x) = 2x - xˆ0
+    print('Result of Schoolbook Multiplication:', polynomial_multiply(A, B))
+    print('Result of Multiplication using FFT:', polynomial_multiply_fft(A, B))
+    print('Result of Multiplication using NTT:', polynomial_multiply_ntt(A, B))
+
+
+if __name__ == '__main__':
+    task_main()
