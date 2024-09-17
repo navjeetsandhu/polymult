@@ -8,7 +8,7 @@ def print_mod(bits, dimension):
     # Number to start checking
     n = 2 ** bits - 1
 
-    d2 = 2 * dimension;
+    d2 = 2 * dimension
 
     # Limit is smallest odd number that satisfies the condition.
     limit = d2 * 2 + 1
@@ -25,5 +25,6 @@ def print_mod(bits, dimension):
 
 if __name__ == '__main__':
     print_mod(62, 1024)
+    print_mod(32, 1024)
     print_mod(30, 1024)
     print_mod(30, 4)
