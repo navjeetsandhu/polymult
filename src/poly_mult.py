@@ -23,13 +23,13 @@ def polynomial_multiply_fft(A, B):
     n = len(A) + len(B) - 1
     next_power_of_2 = 2 ** (n - 1).bit_length()
     # Pad the input polynomials with zeros until their length is a power of 2
-    A_padded = np.pad(A, (0, next_power_of_2 - len(A)), mode='constant')
-    B_padded = np.pad(B, (0, next_power_of_2 - len(B)), mode='constant')
+    a_padded = np.pad(A, (0, next_power_of_2 - len(A)), mode='constant')
+    b_padded = np.pad(B, (0, next_power_of_2 - len(B)), mode='constant')
     # Compute the FFT of the input polynomials
-    A_fft = np.fft.fft(A_padded)
-    B_fft = np.fft.fft(B_padded)
+    a_fft = np.fft.fft(a_padded)
+    b_fft = np.fft.fft(b_padded)
     # Multiply the transformed polynomials element-wise
-    result_fft = A_fft * B_fft
+    result_fft = a_fft * b_fft
     # Compute the inverse FFT of the result to obtain the coefficients of the product
     # polynomial
     result = np.fft.ifft(result_fft).real.round()
