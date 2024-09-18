@@ -18,8 +18,12 @@ def find_primitive(n):
 
     phi = n - 1  # Euler Totient Function for prime number is n-1
     # print('phi = ', phi)
-    prime_factors = list(primerange(1, phi + 1))
+
+    max_range = 10000 if n > 10000 else n
+
+    prime_factors = list(primerange(1, max_range))
     # print('prime_factors = ', prime_factors)
+    # prime_factors = list(primerange(1, 1000))
     for g in range(2, n + 1):
         # print(g)
         flag = False
