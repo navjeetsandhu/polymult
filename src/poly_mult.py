@@ -93,11 +93,11 @@ def polynomial_multiply_ntt(A, B):
 
 def test_one():
     # Example usage
-    A = [1, 2, 3]  # Coefficients of A(x) = xˆ2 + 2x + 3
-    B = [2, -1, 0]  # Coefficients of B(x) = 2x - xˆ0
-    print('Result of Schoolbook Multiplication:', polynomial_multiply(A, B))
-    print('Result of Multiplication using FFT:', polynomial_multiply_fft(A, B))
-    print('Result of Multiplication using NTT:', polynomial_multiply_ntt(A, B))
+    a = [1, 2, 3]  # Coefficients of a(x) = xˆ2 + 2x + 3
+    b = [2, -1, 0]  # Coefficients of B(x) = 2x - xˆ0
+    print('Result of Schoolbook Multiplication:', polynomial_multiply(a, b))
+    print('Result of Multiplication using FFT:', polynomial_multiply_fft(a, b))
+    print('Result of Multiplication using NTT:', polynomial_multiply_ntt(a, b))
 
 
 # Result of Schoolbook Multiplication: [2, 3, 4, -3, 0]
