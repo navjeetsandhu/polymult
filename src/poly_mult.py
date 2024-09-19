@@ -117,7 +117,7 @@ def test_two():
 def test_three():
     # Example usage
     a = [1, 2, 3, 4]
-    b = [1, 2, 3, 4]
+    b = [1, 3, 5, 7]
     print('Result of Schoolbook Multiplication:', polynomial_multiply(a, b))
     print('Result of Multiplication using FFT:', polynomial_multiply_fft(a, b))
     print('Result of Multiplication using NTT:', polynomial_multiply_ntt(a, b))
