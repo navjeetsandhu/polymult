@@ -99,6 +99,7 @@ def test_one():
     print('Result of Multiplication using FFT:', polynomial_multiply_fft(a, b))
     print('Result of Multiplication using NTT:', polynomial_multiply_ntt(a, b))
 
+
 # Result of Schoolbook Multiplication: [2, 3, 4, -3, 0]
 # Result of Multiplication using FFT: [ 2.  3.  4. -3.  0.]
 # Result of Multiplication using NTT: [2, 3, 4, -3]
@@ -113,7 +114,14 @@ def test_two():
     print('Result of Multiplication using NTT:', polynomial_multiply_ntt(a, b))
 
 
+def test_three():
+    # Example usage
+    a = [1, 2, 3, 4]
+    b = [1, 2, 3, 4]
+    print('Result of Schoolbook Multiplication:', polynomial_multiply(a, b))
+    print('Result of Multiplication using FFT:', polynomial_multiply_fft(a, b))
+    print('Result of Multiplication using NTT:', polynomial_multiply_ntt(a, b))
 
 
 if __name__ == '__main__':
-    test_two()
+    test_three()
