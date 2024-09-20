@@ -52,6 +52,18 @@ def mult_poly_naive_q_cc(p1, p2, q, d):
 
     return tmp[:d]
 
+# Negative wrapped convolution (negacyclic convolution)
+# modulus ϕ(x)=xd+1 
+def mult_poly_naive_q_nwc(p1, p2, q, d):
+    tmp = mult_poly_naive_q(p1, p2, q)
+
+    # take polynomial modulo x^d - 1
+    for i in range(d, len(tmp)):
+        tmp[i - d] = (tmp[i - d] - tmp[i]) % q
+        tmp[i] = 0
+
+    return tmp[:d]
+
 
 def test_mult_poly():
     a = [1, 2, 3, 4]
@@ -59,13 +71,15 @@ def test_mult_poly():
     print("Schoolbook Multiplication: ")
     print(mult_poly_naive(a, b))
     # [1, 5, 14, 30, 41, 41, 28]
-    print("Integers modulo a prime number q: ")
+    print("Integers modulo a prime number q: q = 17")
     print(mult_poly_naive_q(a, b, 17))
     # [1, 5, 14, 13, 7, 7, 11]
-    print("Cyclic Convolution (CC): ")
+    print("Cyclic Convolution (CC): q = 17 d =4 ")
     print(mult_poly_naive_q_cc(a, b, 17, 4))
-
-
+    # [8, 12, 8, 13]
+    print("Negative wrapped convolution (negacyclic convolution): q = 17 d =4 ")
+    print(mult_poly_naive_q_nwc(a, b, 17, 4))
+    # [11, 15, 3, 13]
 
 
 if __name__ == '__main__':
