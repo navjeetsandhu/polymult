@@ -53,7 +53,7 @@ def mult_poly_naive_q_cc(p1, p2, q, d):
     return tmp[:d]
 
 # Negative wrapped convolution (negacyclic convolution)
-# modulus ϕ(x)=xd+1 
+# modulus ϕ(x)=xd+1
 def mult_poly_naive_q_nwc(p1, p2, q, d):
     tmp = mult_poly_naive_q(p1, p2, q)
 
